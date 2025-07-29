@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calma - IA Bien-être</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #d9f2f2, #ffffff);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #136b6b;
+      margin-bottom: 0.5rem;
+    }
+    .card {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    button {
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      background-color: #136b6b;
+      color: white;
+      border: none;
+      border-radius: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0f5656;
+    }
+    .output {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      background-color: #f0fdfa;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0d4b4b;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Calma 🧘‍♂️</h1>
+    <p>Appuie sur le bouton et reçois un conseil IA pour mieux dormir et réduire ton stress.</p>
+    <button onclick="generateAdvice()">Générer mes conseils</button>
+    <div class="output" id="output">Clique sur le bouton pour recevoir ton conseil.</div>
+  </div>
+
+  <script>
+    const conseils = [
+      "Prends 10 minutes pour respirer profondément avant de dormir.",
+      "Évite les écrans 1 heure avant de te coucher pour un meilleur sommeil.",
+      "Essaie une infusion de camomille pour calmer ton esprit le soir.",
+      "Fais un petit exercice de méditation ou visualisation positive avant de dormir.",
+      "Garde une température fraîche dans ta chambre, entre 18 et 20°C.",
+      "Pratique une activité physique régulière, mais pas trop tard le soir.",
+      "Écris tes pensées dans un journal pour libérer ton esprit avant le sommeil.",
+      "Écoute de la musique relaxante ou des sons de la nature pour déstresser.",
+      "Prends un bain chaud 30 minutes avant d’aller te coucher.",
+      "Réduis ta consommation de caféine après 14h pour un sommeil de qualité."
+    ];
+
+    function generateAdvice() {
+      const randomIndex = Math.floor(Math.random() * conseils.length);
+      const outputDiv = document.getElementById("output");
+      outputDiv.textContent = conseils[randomIndex];
+    }
+  </script>
+</body>
+</html>
+ajout du fichier index.html
